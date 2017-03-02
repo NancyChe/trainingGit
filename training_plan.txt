@@ -1,0 +1,21 @@
+基本掌握
+	Maven
+	Git
+	SpingMVC
+还需要掌握
+	Mybatis
+	JS + JQuery + Ajax
+		选择器 getElementById("id1")
+					 $("#id1")
+					 change class
+	Tag：CURD + Page
+	Code Review
+	English
+	
+进阶
+	后端方向
+		Spring Boot + PCF + Tomcat
+	前端方向
+		AngularJS
+		HTML5
+		CSS3
