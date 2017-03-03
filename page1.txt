@@ -5,10 +5,4 @@ From DEV
 Since2017
 
 test diff
-
-<<<<<<< HEAD
-111111
-=======
-111111
-dev add
->>>>>>> dev
+fdffffff
