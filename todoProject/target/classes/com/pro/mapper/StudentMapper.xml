@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.pro.dao.StudentMapper" > 
+  
+	 <!-- 查询用户-->  
+    <select id="getAllList" resultType="com.pro.pojo.Student">  
+        SELECT  st_id stId,
+        		st_no stNo,
+				st_name stName,
+				st_sex stSex,
+				st_major stMajor
+		FROM stud  
+    </select>  
+     
+    <!-- 查询用户By id-->  
+    <select id="findOne" parameterType="com.pro.pojo.Student" resultType="com.pro.pojo.Student">  
+        SELECT  st_id stId,
+        		st_no stNo,
+				st_name stName,
+				st_sex stSex,
+				st_major stMajor
+		FROM stud
+		WHERE 1=1
+		AND st_id = #{stId}
+    </select>  
+   
+    <!-- 插入用户 -->  
+    <insert id="insertStud" parameterType="com.pro.pojo.Student">  
+        INSERT INTO stud(
+			st_no,
+			st_name,
+			st_sex,
+			st_major
+		)VALUES(
+			#{stNo},
+			#{stName},
+			#{stSex},
+			#{stMajor}
+		)
+    </insert>  
+      
+    <!-- 更新用户 -->  
+    <update id="updateStud" parameterType="com.pro.pojo.Student">    
+        UPDATE stud   
+        <set >    
+          <if test="stNo!=null and stNo!=''" >st_no = #{stNo,jdbcType=VARCHAR},</if>    
+          <if test="stName!=null and stName!=''" >st_name = #{stName,jdbcType=VARCHAR},</if>    
+          <if test="stSex!=null and stSex!=''" >st_sex = #{stSex,jdbcType=VARCHAR},</if>    
+          <if test="stMajor!=null and stMajor!=''" >st_major = #{stMajor,jdbcType=VARCHAR},</if>    
+        </set>    
+        where st_id = #{stId,jdbcType=INTEGER}   
+    </update>  
+    
+    <!-- 删除用户 -->  
+    <delete id="delStud" parameterType="com.pro.pojo.Student">  
+        DELETE FROM stud WHERE st_id = #{stId,jdbcType=INTEGER}
+    </delete>  
+</mapper>
