@@ -14,7 +14,21 @@
 	
 进阶
 	后端方向
-		Spring Boot + PCF + Tomcat
+		JDK 1.8 new features
+		JDK 1.7 
+		JDK 1.6
+
+		Sort
+		Person p;
+		int age;
+
+		Collections
+		HashMap - Hash
+		ConcurrenceHashMap
+		
+		Spring Boot + Tomcat
+		
+		Linux - Ubuntu/CentOS
 	前端方向
 		AngularJS
 		HTML5
