@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.11.1.min.js"></script>
+   <link href="css/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="div1">
+	<table id="tb1">
+		<tr>
+			<td>用户名：</td>
+			<td><input type="text" name="name" id="code"/></td>
+		</tr>
+		
+		<tr>
+			<td>密码：</td>
+			<td><input type="password" name="password"id="pass"/></td>
+		</tr>
+		
+		<tr>
+			<td><input type="button" value="登录" id="login"/></td>
+			<td><input type="button" value="注册" id="register"/></td>
+		</tr>
+	</table>
+</div>	
+</body>
+	<script type="text/javascript">
+		$("#login").on('click',function(){
+			//var user = "{}";
+			var user ='{"userCode":"' + $("#code").val() + '","passWord":"' + $("#pass").val() + '"}';
+			//user.userCode = $("#code").val();
+			//user.passWord = $("#pass").val();
+			//user = eval("("+ user +")");
+			$.ajax({
+				type : "POST",
+				url : "http://localhost:8080/todolist/login.do",
+				data : user,
+				//dataType : "json",
+				contentType:"application/json",
+				success : function(result) {
+					console.log(result);
+					//var res = JSON.stringify(result);
+					//alert(res);
+					//var res = $.parseJSON(res);
+					var res = eval("("+ result +")");
+					if(res.code == "success"){
+						alert("成功");
+						window.location.href="student.html";
+					}else{
+						alert("失败");
+					
+						window.location.href="login.html";
+						
+					}
+					
+				},
+				error : function(result) {
+					console.log(result);
+					alert("失败！");
+				}
+			});
+		});
+		$("#register").on('click',function(){
+			var user ='{"userCode":"' + $("#code").val() + '","passWord":"' + $("#pass").val() + '"}';
+			$.ajax({
+				type : "POST",
+				url : "http://localhost:8080/todolist/register.do",
+				data : user,
+				//dataType : "json",
+				contentType:"application/json",
+				success : function(result) {
+					console.log(result);
+					//var res = JSON.stringify(result);
+					//alert(res);
+					//var res = $.parseJSON(res);
+					var res = eval("("+ result +")");
+					if(res.code == "success"){
+						alert("注册成功");
+						window.location.href="login.html";
+					}else{
+						alert("注册失败");
+					
+						window.location.href="login.html";
+						
+					}
+					
+				},
+				error : function(result) {
+					console.log(result);
+					alert("注册失败！");
+				}
+			});
+			
+		});
+	</script>
+</html>

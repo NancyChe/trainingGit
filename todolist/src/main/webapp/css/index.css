@@ -1,0 +1,117 @@
+/*index.css*/
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	background: #cdcdcd none repeat scroll 0 0;
+
+}
+header{
+
+	height: 50px;
+	background-color: rgba(47, 47, 47, 0.98);
+}
+section{
+	margin: 0 auto;
+	width: 50%;
+}
+label{
+	color: #ddd;
+	font-size: 24px;
+	float: left;
+	line-height: 50px;
+	width: 95px;
+}
+
+p {
+    margin: 0;
+}
+
+header input{
+	float: right;
+	height: 24px;
+	margin-top: 12px;
+	width: 60%;
+	text-indent: 10px;
+	border: medium none;
+	border-radius: 5px;
+}
+input:focus {
+    outline-width: 0;
+}
+h2{
+	position: relative;
+}
+
+h2 span{
+	float: right;
+}
+ol,ul{
+	list-style: outside none none;
+	padding: 0;
+}
+/*li{
+	cursor: move;
+	background: #fff;
+	line-height: 32px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	padding: 0 45px;
+	position: relative;
+}*/
+
+li {
+    background: #fff none repeat scroll 0 0;
+    border-left: 5px solid #629a9c;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+    padding: 0 45px;
+    position: relative;
+}
+ul li {
+    border-left: 5px solid #999;
+    opacity: 0.5;
+}
+
+li span{
+	float: right;
+	width: 16px;
+	height: 16px;
+	top: 7px;
+	right: 10px;
+	cursor: pointer;
+	background: #ddd;
+	border: 1px solid black;
+	display: inline-block;
+	position: absolute;
+}
+li input{
+	position: absolute;
+	left: 10px;
+	top: 6px;
+}
+li p input{
+	font-size: 14px;
+    height: 20px;
+    left: 40px;
+    line-height: 14px;
+    text-indent: 5px;
+    top: 3px;
+    width: 70%;
+}
+title{
+
+}
+/*@media screen and (max-device-width: 620px) {
+section {
+    padding: 0 2%;
+    width: 96%;
+}
+}*/
+
+footer{
+	text-align: center;
+}

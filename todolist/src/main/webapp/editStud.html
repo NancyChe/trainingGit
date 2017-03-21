@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>修改学生信息</title>
+<script src="js/student.js"></script>
+</head>
+<body onload="GetRequest()">
+	<form id="edit" action="">
+	 <!--  <table border="1px" width="600px">
+			<tr>
+				<th>序号</th>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>专业</th>
+	       </tr>
+			<tbody id="edit">
+			
+			</tbody>
+		</table>
+		 -->
+		 	<input  type="text" name="key" value="" onblur="checkKey()" readonly="readonly"/>
+		<button onclick="postaction()" type="submit" id="button" align="center"><a href="student.html">确认</a></button>
+	</form>
+</body>
+</html>

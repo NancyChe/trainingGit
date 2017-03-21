@@ -1,0 +1,26 @@
+table, th, td {
+	border: 1px solid;
+	cellspacing: 0px;
+	cellpadding: 0px;
+}
+
+table {
+	width: 800px;
+}
+
+th {
+	height: 30px;
+	background-color: gray;
+}
+
+td {
+	width: 150px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+}
+
+body {
+	background-color:  #e4e4e4;
+	
+}
