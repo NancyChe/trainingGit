@@ -1,0 +1,65 @@
+JDK1.7 new features
+1.二进制字面量
+	byte nByte = (byte)0b0001;  
+	short nShort = (short)0B0010;  
+	int nInt = 0b0011;  
+	long nLong = 0b0100L;
+2.数字字面量可以出现下划线
+	int a = 10_0000_0000;  
+	long b = 0xffff_ffff_ffff_ffffl;  
+	byte c = 0b0001_1000; 
+3.switch 可以使用字符串
+	private static void switchString(String str){  
+        switch(str){  
+            case "one":  
+                System.err.println("1");  
+                break;  
+            case "two":  
+                System.out.println("2");  
+                break;  
+            default :  
+                System.out.println("err");  
+        	}  
+	}
+4.泛型实例的创建可以通过类型推断来简化
+ //例如   
+ Map<String, List<String>> myMap = new HashMap<String, List<String>>();  
+ //可以简化为  
+ Map<String, List<String>> myMap = new HashMap<>();
+5.在可变参数方法中传递非具体化参数（Non-Reifiable Formal Parameters）,改进编译警告和错误
+6.try-with-resources 语句
+	jdk7提供了try-with-resources,可以自动关闭相关的资源（只要该资源实现了AutoCloseable接口，jdk7为绝大部分资源对象都实现了这个接口）
+7.Catch多个Exception，rethrow exception 改进了类型检测(允许捕获多个异常)
+catch (IOException|SQLException ex) {  
+    logger.log(ex);  
+    throw ex;  
+}  
+
+
+
+
+
+jdk1.8新特性
+
+一、接口的默认方法与静态方法，也就是接口中可以有实现方法
+    以前的版本定义接口是不能有实现机制的，现在这样用了一个default关键字后，就可以实现，然后子类可以重写，也可以直接使用了。
+
+二、Lambda 表达式（lambda表达式的使用简化了代码。）
+lambda表达式本质是匿名方法，下面是一些lambda表达式：
+
+(int x, int y) -> x + y
+
+() -> 42
+
+(String s) -> { System.out.println(s); }
+
+第一个lambda表达式接收x和y这两个整形参数并返回它们的和；
+第二个lambda表达式不接收参数，返回整数42；
+第三个lambda表达式接收一个字符串并把它打印到控制台，不返回值。
+三、函数式接口与静态导入
+四、Lambda 作用域
+   （在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。）
+五、访问局部变量
+六、访问对象字段与静态变量
+
+
